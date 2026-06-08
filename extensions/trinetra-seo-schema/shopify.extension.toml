@@ -1,0 +1,7 @@
+api_version = "2024-10"
+
+[[extensions]]
+name = "Trinetra SEO – Structured Data"
+handle = "trinetra-seo-schema"
+uid = "d03d6baf-8ccf-b640-b60f-b736f0c0161541f8fbab"
+type = "theme"

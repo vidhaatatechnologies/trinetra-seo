@@ -1,0 +1,69 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+// Note that some adapters may set a maximum length for the String type by default, please ensure your strings are long
+// enough when changing adapters.
+// See https://www.prisma.io/docs/orm/reference/prisma-schema-reference#string for more information
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Session {
+  id                  String    @id
+  shop                String
+  state               String
+  isOnline            Boolean   @default(false)
+  scope               String?
+  expires             DateTime?
+  accessToken         String
+  userId              BigInt?
+  firstName           String?
+  lastName            String?
+  email               String?
+  accountOwner        Boolean   @default(false)
+  locale              String?
+  collaborator        Boolean?  @default(false)
+  emailVerified       Boolean?  @default(false)
+  refreshToken        String?
+  refreshTokenExpires DateTime?
+}
+
+// Per-shop SEO configuration for Trinetra SEO.
+model SeoSettings {
+  id                String   @id @default(cuid())
+  shop              String   @unique
+  // Structured data toggles (consumed by the theme app extension via metafields)
+  schemaProduct     Boolean  @default(true)
+  schemaOrganization Boolean @default(true)
+  schemaBreadcrumb  Boolean  @default(true)
+  schemaArticle     Boolean  @default(true)
+  schemaFaq         Boolean  @default(false)
+  // Organization details for Organization schema
+  orgName           String?
+  orgLogo           String?
+  orgTwitter        String?
+  // Meta title/description templates with {{ variables }}
+  titleTemplate     String   @default("{{ product.title }} | {{ shop.name }}")
+  descTemplate      String   @default("{{ product.description | truncate: 160 }}")
+  // Image alt-text template
+  altTemplate       String   @default("{{ product.title }} - {{ shop.name }}")
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+}
+
+// Per-shop URL redirects created via Trinetra SEO (mirrors Shopify urlRedirect).
+model Redirect {
+  id                String   @id @default(cuid())
+  shop              String
+  path              String
+  target            String
+  shopifyId         String?  // gid of the urlRedirect on Shopify, if synced
+  createdAt         DateTime @default(now())
+
+  @@index([shop])
+}
