@@ -1,0 +1,37 @@
+<svg width="1200" height="1200" viewBox="0 0 1200 1200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Trinetra SEO">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#4338CA"/>
+      <stop offset="1" stop-color="#7C3AED"/>
+    </linearGradient>
+    <linearGradient id="iris" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#22D3EE"/>
+      <stop offset="1" stop-color="#A78BFA"/>
+    </linearGradient>
+  </defs>
+
+  <!-- rounded square background -->
+  <rect width="1200" height="1200" rx="260" fill="url(#bg)"/>
+
+  <!-- the third eye (almond shape) -->
+  <path d="M210 600 Q600 300 990 600 Q600 900 210 600 Z"
+        fill="#0F172A" opacity="0.28"/>
+  <path d="M250 600 Q600 350 950 600 Q600 850 250 600 Z"
+        fill="#FFFFFF"/>
+
+  <!-- iris -->
+  <circle cx="600" cy="600" r="150" fill="url(#iris)"/>
+  <!-- pupil -->
+  <circle cx="600" cy="600" r="74" fill="#0F172A"/>
+  <!-- highlight -->
+  <circle cx="556" cy="556" r="26" fill="#FFFFFF" opacity="0.9"/>
+
+  <!-- SEO magnifier handle, integrated bottom-right -->
+  <line x1="712" y1="712" x2="858" y2="858" stroke="#FFFFFF" stroke-width="56" stroke-linecap="round"/>
+  <line x1="712" y1="712" x2="858" y2="858" stroke="#22D3EE" stroke-width="24" stroke-linecap="round"/>
+
+  <!-- upward trend tick above the eye (ranking up) -->
+  <polyline points="470,430 560,490 640,440 740,500"
+            fill="none" stroke="#22D3EE" stroke-width="34"
+            stroke-linecap="round" stroke-linejoin="round" opacity="0.95"/>
+</svg>
