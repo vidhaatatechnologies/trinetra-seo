@@ -2,7 +2,7 @@
 
 name = "Trinetra SEO"
 client_id = "0d23254d6f2c819d19e05d61d849d966"
-application_url = "https://shopify.dev/apps/default-app-home"
+application_url = "https://trinetra-seo.onrender.com"
 embedded = true
 
 [access_scopes]
@@ -25,7 +25,11 @@ api_version = "2026-07"
   compliance_topics = [ "customers/data_request", "customers/redact", "shop/redact" ]
 
 [auth]
-redirect_urls = [ "https://shopify.dev/apps/default-app-home/api/auth" ]
+redirect_urls = [
+  "https://trinetra-seo.onrender.com/auth/callback",
+  "https://trinetra-seo.onrender.com/auth/shopify/callback",
+  "https://trinetra-seo.onrender.com/api/auth/callback",
+]
 
 [build]
 automatically_update_urls_on_dev = true
