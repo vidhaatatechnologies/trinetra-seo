@@ -16,57 +16,90 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
   return { showForm: Boolean(login) };
 };
 
+const FEATURES = [
+  {
+    icon: "📝",
+    title: "Meta editor",
+    text: "Bulk-edit SEO titles and meta descriptions across all products with smart templates and a live Google preview.",
+  },
+  {
+    icon: "🔖",
+    title: "Structured data",
+    text: "One-click Product, Organization, Breadcrumb, Article & FAQ JSON-LD schema for rich results.",
+  },
+  {
+    icon: "🖼️",
+    title: "Image alt text",
+    text: "Find and auto-fill missing image alt text to capture Google Images traffic and improve accessibility.",
+  },
+  {
+    icon: "📊",
+    title: "SEO health score",
+    text: "A store-wide score with a prioritized list of fixes that actually move the needle.",
+  },
+  {
+    icon: "🔀",
+    title: "Redirect manager",
+    text: "Create 301 redirects to recover link equity from removed or renamed pages.",
+  },
+];
+
 export default function App() {
   const { showForm } = useLoaderData<typeof loader>();
 
   return (
-    <div className={styles.index}>
-      <div className={styles.content}>
+    <div className={styles.page}>
+      <header className={styles.hero}>
+        <img
+          className={styles.logo}
+          src="/trinetra-icon.svg"
+          alt="Trinetra SEO"
+          width={88}
+          height={88}
+        />
         <h1 className={styles.heading}>Trinetra SEO</h1>
-        <p className={styles.text}>
-          All-in-one SEO toolkit for Shopify — optimize meta tags, structured
-          data, image alt text, and redirects to rank higher and win more
-          organic traffic.
+        <p className={styles.tagline}>
+          The all-in-one SEO toolkit for Shopify. Optimize meta tags, structured
+          data, image alt text, and redirects — rank higher and win more organic
+          traffic.
         </p>
+
         {showForm && (
           <Form className={styles.form} method="post" action="/auth/login">
-            <label className={styles.label}>
-              <span>Shop domain</span>
-              <input className={styles.input} type="text" name="shop" />
-              <span>e.g: my-shop-domain.myshopify.com</span>
-            </label>
+            <input
+              className={styles.input}
+              type="text"
+              name="shop"
+              placeholder="my-shop.myshopify.com"
+              aria-label="Shop domain"
+            />
             <button className={styles.button} type="submit">
-              Log in
+              Install / Log in
             </button>
           </Form>
         )}
-        <ul className={styles.list}>
-          <li>
-            <strong>Meta editor</strong>. Bulk-edit SEO titles and meta
-            descriptions across all products with templates and a live Google
-            preview.
-          </li>
-          <li>
-            <strong>Structured data (JSON-LD)</strong>. One-click Product,
-            Organization, Breadcrumb, Article, and FAQ schema for rich results.
-          </li>
-          <li>
-            <strong>Image alt text</strong>. Find and auto-fill missing image
-            alt text to capture image-search traffic.
-          </li>
-          <li>
-            <strong>SEO health score</strong>. See a store-wide score and a
-            prioritized list of fixes that move the needle.
-          </li>
-          <li>
-            <strong>Redirect manager</strong>. Create 301 redirects to recover
-            link equity from removed or renamed pages.
-          </li>
-        </ul>
-        <p className={styles.text}>
-          <a href="/privacy">Privacy policy</a>
-        </p>
-      </div>
+        <p className={styles.hint}>Enter your store domain to get started.</p>
+      </header>
+
+      <section className={styles.features}>
+        {FEATURES.map((f) => (
+          <div key={f.title} className={styles.card}>
+            <span className={styles.cardIcon} aria-hidden>
+              {f.icon}
+            </span>
+            <h3 className={styles.cardTitle}>{f.title}</h3>
+            <p className={styles.cardText}>{f.text}</p>
+          </div>
+        ))}
+      </section>
+
+      <footer className={styles.footer}>
+        <a className={styles.footerLink} href="/privacy">
+          Privacy policy
+        </a>
+        <span className={styles.dot}>•</span>
+        <span>© 2026 Trinetra SEO by Vidhaata Technologies</span>
+      </footer>
     </div>
   );
 }

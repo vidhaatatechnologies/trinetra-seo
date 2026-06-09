@@ -1,73 +1,169 @@
-.index {
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  height: 100%;
-  width: 100%;
-  text-align: center;
-  padding: 1rem;
-}
-
-.heading,
-.text {
-  padding: 0;
+.page {
+  min-height: 100%;
   margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif;
+  color: #1f2330;
+  background: #f7f7fb;
 }
 
-.text {
-  font-size: 1.2rem;
-  padding-bottom: 2rem;
+/* ---------------------------------- Hero --------------------------------- */
+.hero {
+  text-align: center;
+  padding: 72px 24px 64px;
+  background: radial-gradient(
+      1200px 500px at 50% -10%,
+      rgba(124, 58, 237, 0.18),
+      transparent 60%
+    ),
+    linear-gradient(160deg, #4338ca 0%, #6d28d9 55%, #7c3aed 100%);
+  color: #fff;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
 }
 
-.content {
-  display: grid;
-  gap: 2rem;
+.logo {
+  display: block;
+  margin: 0 auto 20px;
+  border-radius: 22px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+.heading {
+  margin: 0 0 12px;
+  font-size: 2.75rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.tagline {
+  max-width: 640px;
+  margin: 0 auto 28px;
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .form {
   display: flex;
-  align-items: center;
-  justify-content: flex-start;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
   margin: 0 auto;
-  gap: 1rem;
-}
-
-.label {
-  display: grid;
-  gap: 0.2rem;
-  max-width: 20rem;
-  text-align: left;
-  font-size: 1rem;
 }
 
 .input {
-  padding: 0.4rem;
+  width: min(360px, 80vw);
+  padding: 13px 16px;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  outline: none;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
 }
 
 .button {
-  padding: 0.4rem;
+  padding: 13px 22px;
+  border: none;
+  border-radius: 12px;
+  background: #0f172a;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.08s ease, background 0.15s ease;
 }
 
-.list {
-  list-style: none;
-  padding: 0;
-  padding-top: 3rem;
+.button:hover {
+  background: #111827;
+  transform: translateY(-1px);
+}
+
+.hint {
+  margin: 14px 0 0;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* -------------------------------- Features ------------------------------- */
+.features {
+  max-width: 1080px;
+  margin: -36px auto 0;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #ececf3;
+  border-radius: 18px;
+  padding: 26px 22px;
+  box-shadow: 0 8px 24px rgba(31, 35, 48, 0.06);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 36px rgba(31, 35, 48, 0.12);
+}
+
+.cardIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  font-size: 1.6rem;
+  background: linear-gradient(160deg, #eef2ff, #f3e8ff);
+  margin-bottom: 14px;
+}
+
+.cardTitle {
+  margin: 0 0 8px;
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.cardText {
   margin: 0;
-  display: flex;
-  gap: 2rem;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: #5b6072;
 }
 
-.list > li {
-  max-width: 20rem;
-  text-align: left;
+/* --------------------------------- Footer -------------------------------- */
+.footer {
+  max-width: 1080px;
+  margin: 56px auto 0;
+  padding: 28px 24px 48px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #6b7180;
 }
 
-@media only screen and (max-width: 50rem) {
-  .list {
-    display: block;
+.footerLink {
+  color: #6d28d9;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.footerLink:hover {
+  text-decoration: underline;
+}
+
+.dot {
+  margin: 0 10px;
+  color: #c4c8d4;
+}
+
+@media only screen and (max-width: 640px) {
+  .heading {
+    font-size: 2.1rem;
   }
-
-  .list > li {
-    padding-bottom: 1rem;
+  .hero {
+    padding: 56px 20px 52px;
   }
 }
