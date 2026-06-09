@@ -22,9 +22,11 @@ export default function App() {
   return (
     <div className={styles.index}>
       <div className={styles.content}>
-        <h1 className={styles.heading}>A short heading about [your app]</h1>
+        <h1 className={styles.heading}>Trinetra SEO</h1>
         <p className={styles.text}>
-          A tagline about [your app] that describes your value proposition.
+          All-in-one SEO toolkit for Shopify — optimize meta tags, structured
+          data, image alt text, and redirects to rank higher and win more
+          organic traffic.
         </p>
         {showForm && (
           <Form className={styles.form} method="post" action="/auth/login">
@@ -40,18 +42,30 @@ export default function App() {
         )}
         <ul className={styles.list}>
           <li>
-            <strong>Product feature</strong>. Some detail about your feature and
-            its benefit to your customer.
+            <strong>Meta editor</strong>. Bulk-edit SEO titles and meta
+            descriptions across all products with templates and a live Google
+            preview.
           </li>
           <li>
-            <strong>Product feature</strong>. Some detail about your feature and
-            its benefit to your customer.
+            <strong>Structured data (JSON-LD)</strong>. One-click Product,
+            Organization, Breadcrumb, Article, and FAQ schema for rich results.
           </li>
           <li>
-            <strong>Product feature</strong>. Some detail about your feature and
-            its benefit to your customer.
+            <strong>Image alt text</strong>. Find and auto-fill missing image
+            alt text to capture image-search traffic.
+          </li>
+          <li>
+            <strong>SEO health score</strong>. See a store-wide score and a
+            prioritized list of fixes that move the needle.
+          </li>
+          <li>
+            <strong>Redirect manager</strong>. Create 301 redirects to recover
+            link equity from removed or renamed pages.
           </li>
         </ul>
+        <p className={styles.text}>
+          <a href="/privacy">Privacy policy</a>
+        </p>
       </div>
     </div>
   );
