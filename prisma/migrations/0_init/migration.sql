@@ -62,14 +62,4 @@ CREATE UNIQUE INDEX "SeoSettings_shop_key" ON "SeoSettings"("shop");
 
 -- CreateIndex
 CREATE INDEX "Redirect_shop_idx" ON "Redirect"("shop");
-┌─────────────────────────────────────────────────────────┐
-│  Update available 6.19.3 -> 7.8.0                       │
-│                                                         │
-│  This is a major update - please follow the guide at    │
-│  https://pris.ly/d/major-version-upgrade                │
-│                                                         │
-│  Run the following to update                            │
-│    npm i --save-dev prisma@latest                       │
-│    npm i @prisma/client@latest                          │
-└─────────────────────────────────────────────────────────┘
 
