@@ -27,7 +27,9 @@ export default function App() {
         <Link to="/app/meta">Meta editor</Link>
         <Link to="/app/images">Image alt text</Link>
         <Link to="/app/schema">Structured data</Link>
+        <Link to="/app/geo">AI Citation (GEO)</Link>
         <Link to="/app/redirects">Redirects</Link>
+        <Link to="/app/billing">Plan &amp; Billing</Link>
       </NavMenu>
       <Outlet />
     </AppProvider>
